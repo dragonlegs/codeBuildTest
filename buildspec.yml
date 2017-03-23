@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - bash CloseSG.sh
-      - curl -I http://54.165.135.37
+      - curl -I http://54.165.135.37 -m 10
 artifacts:
   files:
     - hello
