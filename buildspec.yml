@@ -1,0 +1,20 @@
+on: 0.1
+
+phases:
+  pre_build:
+    commands:
+      - bash OpenSG.sh
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Go code...
+      - go build hello.go
+      - curl -I http://54.165.135.37 
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - bash CloseSG.sh
+      - curl -I http://54.165.135.37
+artifacts:
+  files:
+    - hello
